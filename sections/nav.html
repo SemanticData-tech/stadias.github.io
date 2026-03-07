@@ -1,0 +1,25 @@
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="logo-img-link">
+    <img src="assets/images/stadias-logo.png" alt="Stadias.in — Sports Infrastructure" class="nav-logo-img">
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get a Quote</button>
+  <button class="hamburger" id="hamburger" aria-label="Toggle menu" onclick="toggleMobileNav()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE NAV DRAWER -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="#about"    onclick="closeMobileNav()">About</a>
+  <a href="#services" onclick="closeMobileNav()">Services</a>
+  <a href="#projects" onclick="closeMobileNav()">Projects</a>
+  <a href="#contact"  onclick="closeMobileNav()">Contact</a>
+  <button class="mobile-cta" onclick="closeMobileNav(); document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get a Quote</button>
+</div>
