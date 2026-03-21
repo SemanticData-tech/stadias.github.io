@@ -4,13 +4,13 @@
  */
 
 :root {
-  --steel: #1a1f2e;
-  --concrete: #2c2f3a;
-  --rust: #c0392b;
-  --amber: #e67e22;
-  --iron: #8d99ae;
-  --white: #f0f0f0;
-  --gold: #d4a847;
+  --steel: #0F2A44;
+  --concrete: #132238;
+  --rust: #FF6A00;
+  --amber: #FF8C00;
+  --iron: #8FA3BF;
+  --white: #F0F4F8;
+  --gold: #E8EFF6;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -95,7 +95,7 @@ body::before {
   text-decoration: none;
   display: inline-block;
 }
-.btn-primary:hover { background: #e74c3c; transform: translateY(-2px); }
+.btn-primary:hover { background: #FF5500; transform: translateY(-2px); }
 .btn-ghost {
   font-family: 'Barlow Condensed', sans-serif;
   font-size: 13px; font-weight: 600;
