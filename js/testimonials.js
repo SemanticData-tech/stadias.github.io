@@ -1,45 +1,55 @@
 /*
- * testimonials.js — Testimonial carousel with auto-cycle
- * Stadias.in
+ * testimonials.js — Rotating testimonials
+ * Track and Field Infra Pvt. Ltd.
  */
 
 const testimonials = [
   {
-    text: '"Stadias installed our 7-a-side football turf within the promised timeline and the quality is outstanding. Our players love the surface — it\'s consistent, safe, and plays beautifully in all weather."',
-    name: 'Rajesh Mehta',
-    role: 'Director · Gallant Sports Academy, Mumbai'
+    text: '"Track & Field Infra delivered our school\'s athletic track exactly on schedule and within budget. The quality of the surface has been exceptional — our students are thrilled, and the track has transformed our annual sports programme."',
+    name: "Principal R. Sharma",
+    role: "Principal · Rotary Public School, Mysuru"
   },
   {
-    text: '"We needed an FIH-certified hockey pitch for our school and Stadias delivered exactly that. Their team managed every detail from civil work to infill and line marking. Exceptional service."',
-    name: 'Priya Subramaniam',
-    role: 'Sports Director · Altius Sports School, Bengaluru'
+    text: '"The team at Track & Field Infra brought real engineering expertise to our project in Manipur. Working in a remote location is always challenging, but they handled logistics brilliantly and delivered a professional-grade ground we are extremely proud of."',
+    name: "District Sports Officer",
+    role: "Ukhrul District Sports Authority, Manipur"
   },
   {
-    text: '"Stadias built our 400m synthetic athletic track on schedule and within budget. The surface quality meets international standards and our athletes have seen a measurable improvement in performance."',
-    name: 'Coach Avinash Patil',
-    role: 'Head Coach · Meckavo Sports Academy, Pune'
+    text: '"From site assessment to final handover, the entire experience was smooth and professional. Their transparent pricing and dedicated project manager made all the difference. We now have a multi-sport facility that our children use every single day."',
+    name: "Managing Director",
+    role: "Play Haus Sports Facility, Rohini, Delhi"
   }
 ];
 
-let activeT = 0;
+let current = 0;
 
 function changeTestimonial(idx) {
-  activeT = idx;
-  const t    = testimonials[idx];
-  const text = document.getElementById('testimonialText');
-  if (!text) return;
-  text.style.opacity = '0';
+  current = idx;
+  document.getElementById('testimonialText').style.opacity = '0';
+  document.getElementById('authorName').style.opacity = '0';
+  document.getElementById('authorRole').style.opacity = '0';
+
   setTimeout(() => {
-    text.textContent = t.text;
-    document.getElementById('authorName').textContent = t.name;
-    document.getElementById('authorRole').textContent = t.role;
-    text.style.opacity = '1';
+    document.getElementById('testimonialText').textContent = testimonials[idx].text;
+    document.getElementById('authorName').textContent = testimonials[idx].name;
+    document.getElementById('authorRole').textContent = testimonials[idx].role;
+
+    document.getElementById('testimonialText').style.opacity = '1';
+    document.getElementById('authorName').style.opacity = '1';
+    document.getElementById('authorRole').style.opacity = '1';
+
+    document.querySelectorAll('.dot').forEach((d, i) => {
+      d.classList.toggle('active', i === idx);
+    });
   }, 300);
-  document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === idx));
 }
 
-const testimonialText = document.getElementById('testimonialText');
-if (testimonialText) {
-  testimonialText.style.transition = 'opacity 0.3s';
-  setInterval(() => changeTestimonial((activeT + 1) % testimonials.length), 5000);
-}
+// Auto-rotate every 6s
+setInterval(() => {
+  changeTestimonial((current + 1) % testimonials.length);
+}, 6000);
+
+// Add transition CSS via JS
+const style = document.createElement('style');
+style.textContent = '#testimonialText, #authorName, #authorRole { transition: opacity 0.3s ease; }';
+document.head.appendChild(style);

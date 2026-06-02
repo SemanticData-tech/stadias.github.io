@@ -211,3 +211,275 @@ footer { background: #060F1A; padding: 80px 60px 40px; border-top: 1px solid rgb
 .footer-bottom { max-width: 1300px; margin: 0 auto; padding-top: 40px; border-top: 1px solid rgba(240,240,240,0.06); display: flex; justify-content: space-between; align-items: center; }
 .footer-bottom p { font-size: 12px; color: var(--iron); font-family: 'Barlow Condensed', sans-serif; letter-spacing: 2px; }
 .footer-tagline { font-family: 'Bebas Neue', sans-serif; font-size: 20px; letter-spacing: 4px; color: rgba(255,255,255,0.1); }
+
+/* ─── VISION & MISSION ─── */
+.mission {
+  padding: 140px 60px;
+  background: var(--concrete);
+  position: relative;
+  overflow: hidden;
+}
+.mission::before {
+  content: 'MISSION';
+  position: absolute;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 220px;
+  color: rgba(255,255,255,0.02);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  letter-spacing: 20px;
+  pointer-events: none;
+}
+.mission-inner {
+  max-width: 1300px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+.mission-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+}
+.mission-card {
+  background: var(--steel);
+  padding: 52px 44px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+.mission-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 0; height: 3px;
+  background: var(--rust);
+  transition: width 0.4s ease;
+}
+.mission-card:hover::after { width: 100%; }
+.mission-card:hover { transform: translateY(-4px); }
+.mission-icon {
+  width: 56px; height: 56px;
+  border: 1px solid rgba(255,106,0,0.3);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 24px;
+  color: var(--rust);
+  transition: border-color 0.3s;
+}
+.mission-card:hover .mission-icon { border-color: var(--rust); }
+.mission-icon svg { width: 28px; height: 28px; }
+.mission-eyebrow {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 5px; text-transform: uppercase;
+  color: var(--rust); margin-bottom: 16px;
+}
+.mission-card h3 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 22px; font-weight: 700;
+  letter-spacing: 1px; text-transform: uppercase;
+  color: var(--white); margin-bottom: 20px;
+  line-height: 1.25;
+}
+.mission-card p {
+  font-size: 14px; line-height: 1.75;
+  color: var(--iron);
+}
+
+/* ─── WHY CHOOSE US ─── */
+.why-us {
+  background: var(--steel);
+  position: relative;
+}
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+}
+.why-card {
+  background: var(--concrete);
+  padding: 44px 36px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+.why-card:hover { transform: translateY(-4px); }
+.why-card::before {
+  content: ''; position: absolute;
+  bottom: 0; left: 0;
+  width: 0; height: 3px;
+  background: var(--rust);
+  transition: width 0.4s ease;
+}
+.why-card:hover::before { width: 100%; }
+.why-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 80px;
+  color: rgba(255,255,255,0.04);
+  line-height: 1;
+  position: absolute;
+  top: 16px; right: 24px;
+  transition: color 0.3s;
+}
+.why-card:hover .why-num { color: rgba(255,106,0,0.1); }
+.why-card h3 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 22px; font-weight: 700;
+  letter-spacing: 1px; text-transform: uppercase;
+  color: var(--white); margin-bottom: 16px;
+}
+.why-card p {
+  font-size: 14px; line-height: 1.75;
+  color: var(--iron);
+}
+
+/* ─── CUSTOMER VALUE ─── */
+.customer-value {
+  padding: 140px 60px;
+  background: var(--concrete);
+}
+.cv-inner {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+.cv-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+}
+.cv-item {
+  background: var(--steel);
+  padding: 44px 36px;
+  position: relative;
+  transition: transform 0.3s;
+}
+.cv-item:hover { transform: translateY(-4px); }
+.cv-item::after {
+  content: ''; position: absolute;
+  top: 0; left: 0;
+  width: 3px; height: 0;
+  background: var(--rust);
+  transition: height 0.4s ease;
+}
+.cv-item:hover::after { height: 100%; }
+.cv-icon {
+  width: 52px; height: 52px;
+  border: 1px solid rgba(255,106,0,0.25);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 24px;
+  transition: border-color 0.3s;
+}
+.cv-item:hover .cv-icon { border-color: var(--rust); }
+.cv-icon svg { width: 26px; height: 26px; }
+.cv-item h4 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 20px; font-weight: 700;
+  letter-spacing: 1px; text-transform: uppercase;
+  color: var(--white); margin-bottom: 14px;
+}
+.cv-item p {
+  font-size: 14px; line-height: 1.75;
+  color: var(--iron);
+}
+
+/* ─── TEAM SECTION ─── */
+.team-section {
+  padding: 140px 60px;
+  background: var(--steel);
+}
+.team-inner {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+.team-grid {
+  display: flex;
+  justify-content: center;
+}
+.team-card {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 60px;
+  align-items: start;
+  background: var(--concrete);
+  padding: 52px;
+  max-width: 900px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.team-card::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0;
+  width: 3px; height: 100%;
+  background: var(--rust);
+}
+.team-avatar {
+  position: relative;
+  width: 180px; height: 180px;
+}
+.team-avatar svg {
+  width: 100%; height: 100%;
+}
+.avatar-initials {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 52px;
+  letter-spacing: 4px;
+  color: var(--rust);
+}
+.team-info h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 42px; letter-spacing: 2px;
+  color: var(--white); margin-bottom: 8px;
+}
+.team-role {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 12px; font-weight: 600;
+  letter-spacing: 5px; text-transform: uppercase;
+  color: var(--rust); margin-bottom: 24px;
+}
+.team-info p {
+  font-size: 15px; line-height: 1.8;
+  color: var(--iron); margin-bottom: 28px;
+}
+.team-tags {
+  display: flex; flex-wrap: wrap; gap: 8px;
+}
+.team-tags span {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 2px; text-transform: uppercase;
+  color: var(--iron);
+  border: 1px solid rgba(255,255,255,0.12);
+  padding: 6px 14px;
+  transition: border-color 0.2s, color 0.2s;
+}
+.team-card:hover .team-tags span {
+  border-color: rgba(255,106,0,0.3);
+}
+
+/* ─── RESPONSIVE ADDITIONS ─── */
+@media (max-width: 1024px) {
+  .mission-grid { grid-template-columns: 1fr 1fr; }
+  .why-grid { grid-template-columns: 1fr 1fr; }
+  .cv-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px) {
+  .mission { padding: 80px 24px; }
+  .mission-grid { grid-template-columns: 1fr; }
+  .why-us .parallax-banner-content { padding: 80px 24px; }
+  .why-grid { grid-template-columns: 1fr; }
+  .customer-value { padding: 80px 24px; }
+  .cv-grid { grid-template-columns: 1fr; }
+  .team-section { padding: 80px 24px; }
+  .team-card { grid-template-columns: 1fr; gap: 32px; padding: 36px 28px; }
+  .team-avatar { width: 120px; height: 120px; }
+  .avatar-initials { font-size: 36px; }
+}

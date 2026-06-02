@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://stadias.in/sitemap.xml
+Sitemap: https://trackandfields.in/sitemap.xml
