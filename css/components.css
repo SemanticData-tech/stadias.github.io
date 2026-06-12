@@ -48,7 +48,7 @@ nav.scrolled {
   letter-spacing: 3px; text-transform: uppercase;
   background: var(--rust); color: var(--white);
   border: none; padding: 12px 28px;
-  cursor: none;
+  cursor: auto;
   transition: background 0.2s, transform 0.2s;
   clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
 }
