@@ -122,7 +122,7 @@
 .projects-parallax { height: 100vh; position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; }
 .parallax-bg { position: absolute; inset: -20%; background: linear-gradient(rgba(15,42,68,0.7), rgba(253,253,253,0.92)), repeating-conic-gradient(#0B1E33 0% 25%, #0F2540 0% 50%) 0 0 / 80px 80px; will-change: transform; }
 .parallax-content { position: relative; z-index: 2; text-align: center; }
-.parallax-content p { font-size: 18px; color: #666; margin-top: 20px; }
+.parallax-content p { font-size: 18px; color: rgba(253,253,253,0.65); margin-top: 20px; }
 .parallax-banner { height: 65vh; position: relative; display: flex; align-items: center; overflow: hidden; }
 .parallax-banner-bg {
   position: absolute; inset: -30%;
@@ -130,8 +130,8 @@
   background-color: #232526; will-change: transform;
 }
 .parallax-banner-content { position: relative; z-index: 2; padding: 0 60px; max-width: 1300px; margin: 0 auto; width: 100%; }
-.banner-quote { font-family: 'Bebas Neue', sans-serif; font-size: clamp(50px, 7vw, 100px); line-height: 1; max-width: 800px; }
-.banner-quote em { font-style: normal; -webkit-text-stroke: 1px rgba(240,240,240,0.5); color: transparent; }
+.banner-quote { font-family: 'Bebas Neue', sans-serif; font-size: clamp(50px, 7vw, 100px); line-height: 1; max-width: 800px; color: #FDFDFD; }
+.banner-quote em { font-style: normal; -webkit-text-stroke: 2px rgba(253,253,253,0.4); color: transparent; }
 
 /* ─── PROJECTS ─── */
 .projects { padding: 0 60px 140px; background: var(--bg); }
