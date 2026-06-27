@@ -1,6 +1,6 @@
 /*
  * components.css — Navbar, hamburger, mobile nav, ticker, WhatsApp FAB, reCAPTCHA
- * Stadias.in
+ * Track & Field Infra Pvt. Ltd.
  */
 
 /* ─── NAV ─── */
@@ -9,50 +9,58 @@ nav {
   z-index: 500;
   padding: 24px 60px;
   display: flex; align-items: center; justify-content: space-between;
-  background: linear-gradient(to bottom, rgba(15,42,68,0.95) 0%, transparent 100%);
-  transition: background 0.3s;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition: background 0.4s ease, border-color 0.4s ease, padding 0.3s ease, box-shadow 0.4s ease;
 }
 nav.scrolled {
-  background: rgba(15,42,68,0.98);
-  border-bottom: 1px solid rgba(255,106,0,0.3);
-  backdrop-filter: blur(10px);
+  background: #232526;
+  border-bottom: 1px solid rgba(217,106,106,0.2);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 2px 24px rgba(0,0,0,0.3);
+  padding: 16px 60px;
 }
 .logo {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 28px;
   letter-spacing: 4px;
-  color: var(--white);
+  color: var(--dark);
   text-decoration: none;
 }
-.logo span { color: var(--rust); }
+.logo span { color: var(--coral); }
 .nav-links { display: flex; gap: 40px; list-style: none; }
 .nav-links a {
   font-family: 'Barlow Condensed', sans-serif;
   font-size: 13px; font-weight: 600;
   letter-spacing: 3px; text-transform: uppercase;
-  color: var(--iron);
+  color: rgba(253,253,253,0.8);
   text-decoration: none;
   transition: color 0.2s;
   position: relative;
 }
 .nav-links a::after {
   content: ''; position: absolute; bottom: -4px; left: 0;
-  width: 0; height: 1px; background: var(--rust);
+  width: 0; height: 2px; background: var(--coral);
   transition: width 0.3s;
 }
-.nav-links a:hover { color: var(--white); }
+.nav-links a:hover { color: #FDFDFD; }
 .nav-links a:hover::after { width: 100%; }
+/* On scroll — links stay white on dark bg, just slightly brighter */
+nav.scrolled .nav-links a { color: rgba(253,253,253,0.7); }
+nav.scrolled .nav-links a:hover { color: #FDFDFD; }
 .nav-cta {
   font-family: 'Barlow Condensed', sans-serif;
   font-size: 12px; font-weight: 700;
   letter-spacing: 3px; text-transform: uppercase;
-  background: var(--rust); color: var(--white);
-  border: none; padding: 12px 28px;
-  cursor: auto;
-  transition: background 0.2s, transform 0.2s;
+  background: transparent; color: #FDFDFD;
+  border: 1px solid rgba(253,253,253,0.5); padding: 12px 28px;
+  cursor: pointer;
+  transition: background 0.3s, border-color 0.3s, color 0.2s, transform 0.2s;
   clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
 }
-.nav-cta:hover { background: var(--amber); transform: translateY(-1px); }
+.nav-cta:hover { background: var(--coral); border-color: var(--coral); transform: translateY(-1px); }
+nav.scrolled .nav-cta { background: var(--coral); border-color: var(--coral); color: #FDFDFD; }
+nav.scrolled .nav-cta:hover { background: #C05050; border-color: #C05050; }
 
 /* ─── HAMBURGER MENU ─── */
 .hamburger {
@@ -62,7 +70,7 @@ nav.scrolled {
 }
 .hamburger span {
   display: block; width: 26px; height: 2px;
-  background: var(--white); border-radius: 2px;
+  background: #FDFDFD; border-radius: 2px;
   transition: all 0.3s ease; transform-origin: center;
 }
 .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
@@ -73,7 +81,7 @@ nav.scrolled {
 .mobile-nav {
   display: none;
   position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(13,17,23,0.98);
+  background: rgba(253,253,253,0.99);
   backdrop-filter: blur(12px);
   z-index: 490;
   flex-direction: column; align-items: center; justify-content: center;
@@ -85,18 +93,18 @@ nav.scrolled {
 .mobile-nav a {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 48px; letter-spacing: 4px;
-  color: rgba(240,240,240,0.6); text-decoration: none;
+  color: rgba(35,37,38,0.6); text-decoration: none;
   padding: 16px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid rgba(35,37,38,0.08);
   width: 80%; text-align: center; transition: color 0.2s;
 }
-.mobile-nav a:hover { color: var(--rust); }
+.mobile-nav a:hover { color: var(--coral); }
 .mobile-nav .mobile-cta {
   margin-top: 32px;
   font-family: 'Barlow Condensed', sans-serif;
   font-size: 14px; font-weight: 700;
   letter-spacing: 3px; text-transform: uppercase;
-  background: var(--rust); color: var(--white);
+  background: var(--coral); color: #FDFDFD;
   border: none; padding: 16px 48px;
   clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
   cursor: pointer;
@@ -104,7 +112,7 @@ nav.scrolled {
 
 /* ─── TICKER ─── */
 .ticker {
-  background: var(--rust);
+  background: var(--dark);
   padding: 14px 0; overflow: hidden;
   white-space: nowrap; position: relative;
 }
@@ -113,9 +121,9 @@ nav.scrolled {
   font-family: 'Barlow Condensed', sans-serif;
   font-size: 13px; font-weight: 600;
   letter-spacing: 4px; text-transform: uppercase;
-  color: rgba(240,240,240,0.9); padding: 0 40px;
+  color: rgba(253,253,253,0.7); padding: 0 40px;
 }
-.ticker-item::before { content: '◆'; margin-right: 40px; opacity: 0.5; }
+.ticker-item::before { content: '◆'; margin-right: 40px; opacity: 0.4; color: var(--coral); }
 
 /* ─── WHATSAPP FAB ─── */
 .whatsapp-fab {
@@ -138,7 +146,7 @@ nav.scrolled {
 }
 .whatsapp-fab a::after {
   content: 'Chat with us'; position: absolute; right: 70px;
-  background-color: #333; color: #fff;
+  background-color: var(--dark); color: #FDFDFD;
   padding: 8px 12px; border-radius: 5px;
   font-size: 14px; font-family: 'Barlow', sans-serif;
   white-space: nowrap; opacity: 0; visibility: hidden; transition: all 0.3s ease;
@@ -150,16 +158,16 @@ nav.scrolled {
 .recaptcha-notice {
   display: flex; align-items: center; gap: 10px;
   margin-top: 14px; padding: 10px 14px;
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.07); border-radius: 4px;
+  background: rgba(35,37,38,0.03);
+  border: 1px solid rgba(35,37,38,0.08); border-radius: 4px;
 }
 .recaptcha-notice .rc-logo { flex-shrink: 0; width: 38px; height: 38px; }
 .recaptcha-notice .rc-text {
-  font-family: 'Barlow', sans-serif; font-size: 10px; line-height: 1.5; color: var(--iron);
+  font-family: 'Barlow', sans-serif; font-size: 10px; line-height: 1.5; color: #888;
 }
 .recaptcha-notice .rc-text strong {
   display: block; font-size: 12px; font-weight: 600;
-  color: rgba(240,240,240,0.7); letter-spacing: 0.3px;
+  color: #555; letter-spacing: 0.3px;
 }
 .recaptcha-notice .rc-text a { color: #4a90d9; text-decoration: none; }
 .recaptcha-notice .rc-text a:hover { text-decoration: underline; }
@@ -170,29 +178,36 @@ nav.scrolled {
   align-items: center;
   text-decoration: none;
   flex-shrink: 0;
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+}
+footer .logo-img-link {
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
 }
 .nav-logo-img {
-  height: 68px;
+  height: 60px;
   width: auto;
   object-fit: contain;
-  /* Remove red background — show on dark nav */
-  filter: brightness(1.05) drop-shadow(0 2px 6px rgba(0,0,0,0.4));
-  transition: transform 0.2s ease, filter 0.2s ease;
+  mix-blend-mode: screen;
+  transition: transform 0.2s ease, height 0.3s ease;
 }
 .nav-logo-img:hover {
   transform: scale(1.04);
-  filter: brightness(1.15) drop-shadow(0 2px 10px rgba(255,106,0,0.5));
 }
 
 /* Smaller on scroll */
 nav.scrolled .nav-logo-img {
-  height: 56px;
+  height: 48px;
+  mix-blend-mode: screen;
 }
 
 /* Mobile */
 @media (max-width: 768px) {
-  .nav-logo-img { height: 52px; }
+  .nav-logo-img { height: 44px; }
 }
 @media (max-width: 480px) {
-  .nav-logo-img { height: 42px; }
+  .nav-logo-img { height: 38px; }
 }
