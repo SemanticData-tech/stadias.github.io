@@ -65,7 +65,7 @@
 .stat-label { font-family: 'Barlow Condensed', sans-serif; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: rgba(253,253,253,0.5); }
 
 /* ─── ABOUT ─── */
-.about { padding: 140px 60px; background: var(--bg); }
+.about { padding: 140px 60px; background: var(--bg); overflow: hidden; }
 .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center; max-width: 1300px; margin: 0 auto; }
 .about-visual { position: relative; }
 .about-img-main {
