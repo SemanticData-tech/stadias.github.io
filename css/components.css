@@ -14,10 +14,10 @@ nav {
   transition: background 0.4s ease, border-color 0.4s ease, padding 0.3s ease, box-shadow 0.4s ease;
 }
 nav.scrolled {
-  background: #232526;
-  border-bottom: 1px solid rgba(217,106,106,0.2);
+  background: #FDFDFD;
+  border-bottom: 1px solid rgba(35,37,38,0.08);
   backdrop-filter: blur(12px);
-  box-shadow: 0 2px 24px rgba(0,0,0,0.3);
+  box-shadow: 0 2px 24px rgba(0,0,0,0.12);
   padding: 16px 60px;
 }
 .logo {
@@ -45,9 +45,9 @@ nav.scrolled {
 }
 .nav-links a:hover { color: #FDFDFD; }
 .nav-links a:hover::after { width: 100%; }
-/* On scroll — links stay white on dark bg, just slightly brighter */
-nav.scrolled .nav-links a { color: rgba(253,253,253,0.7); }
-nav.scrolled .nav-links a:hover { color: #FDFDFD; }
+/* On scroll — bar turns white, text turns dark */
+nav.scrolled .nav-links a { color: rgba(35,37,38,0.75); }
+nav.scrolled .nav-links a:hover { color: var(--dark); }
 .nav-cta {
   font-family: 'Barlow Condensed', sans-serif;
   font-size: 12px; font-weight: 700;
@@ -76,6 +76,9 @@ nav.scrolled .nav-cta:hover { background: #C05050; border-color: #C05050; }
 .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
 .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Hamburger turns dark once nav bar is white */
+nav.scrolled .hamburger span { background: var(--dark); }
 
 /* Mobile nav drawer */
 .mobile-nav {
@@ -198,10 +201,10 @@ footer .logo-img-link {
   transform: scale(1.04);
 }
 
-/* Smaller on scroll */
+/* Smaller on scroll, and shown in true colors on the now-white bar */
 nav.scrolled .nav-logo-img {
   height: 48px;
-  mix-blend-mode: screen;
+  mix-blend-mode: normal;
 }
 
 /* Mobile */
